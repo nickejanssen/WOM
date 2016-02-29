@@ -23,13 +23,61 @@
   }
 }
 
+#hero-image {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: auto;
+}
+#hero-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+}
+
+.wrapper {
+  margin:0 auto;
+  width:100%;
+  min-width:760px;
+  max-width:1003px;
+  overflow:hidden;
+}
+
+.hero-img {
+  background: url("hero.jpg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  left: 0%;
+  position: absolute;
+  top: 180px;
+}
+
+.hero-img img {
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+}
+
 #owl-demo .item{
   margin: 0px;
 }
+
 #owl-demo .item img{
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 #img-preview {
