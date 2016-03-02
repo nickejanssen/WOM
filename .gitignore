@@ -40,3 +40,4 @@ bower.json
 .powenv
 app/assets/media/womAnimation.mov
 app/assets/media/womAnimation.mp4
+public/videos/womAnimation.mov
