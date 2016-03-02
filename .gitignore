@@ -39,3 +39,4 @@ bower.json
 # Ignore pow environment settings
 .powenv
 app/assets/media/womAnimation.mov
+app/assets/media/womAnimation.mp4
