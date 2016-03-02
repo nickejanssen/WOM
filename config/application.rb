@@ -29,14 +29,5 @@ module WOM
     #:secret_access_key => 'z1isDFjpGtaAZlJiwJYzwW/UqY5Wllsik6chFUdy'
     #)
 
-    Aws.config.update({
-      region: 'us-east-1',
-      credentials: Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY'])
-    })
-
-    s3 = Aws::S3::Client.new(region:'us-east-1', credentials: credentials)
-
-    #BUCKET = 'wommusic'
-
   end
 end
