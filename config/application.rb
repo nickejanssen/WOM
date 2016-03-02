@@ -2,6 +2,11 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+#require 'rubygems'
+require 'aws-sdk'
+
+
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -19,5 +24,19 @@ module WOM
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    #AWS::S3::Base.establish_connection!(
+    #:access_key_id     => 'AKIAJM3LCWBTLVAXYQYQ',
+    #:secret_access_key => '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'
+    #)
+
+    Aws.config.update({
+      region: 'us-east-1',
+      credentials: Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY'])
+    })
+
+    s3 = Aws::S3::Client.new(region:'us-east-1', credentials: credentials)
+
+    #BUCKET = 'wommusic'
+
   end
 end

@@ -18,6 +18,8 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
 gem 'owlcarousel-rails'
 gem "binding_of_caller"
+gem 'aws-sdk', '~> 2'
+gem 'aws-sdk-core'
 
 group :development do
   gem 'spring'

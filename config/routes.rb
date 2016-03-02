@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
 
+  get 'music/index'
+
+  get 'music/download'
+
+  get 'music/mpage'
+
+  get 'music/upload'
+
+  get 'music/delete'
+
+  resources :uploads
+
+
   resources :posts
   resources :comments, only: [:create, :destroy]
   devise_for :users
@@ -25,6 +38,7 @@ Rails.application.routes.draw do
   match :unlike, to: 'likes#destroy', as: :unlike, via: :post
   match :find_friends, to: 'home#find_friends', as: :find_friends, via: :get
   match :about, to: 'home#about', as: :about, via: :get
+  match :music, to: 'music#index', as: :music, via: :get
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
