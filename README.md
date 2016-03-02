@@ -59,4 +59,4 @@ This will create records with values from faker & populator gems. Also here are 
 If you find any issue with the app please do raise an issue here https://github.com/nickejanssen/WOM/issues
 
 ### License
-This project is Licensed under the [GNU GPL V2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html). See  [LICENSE](https://github.com/sudharti/WOM/blob/master/LICENSE) for more info.
+This project is Licensed under the [GNU GPL V2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html). See  [LICENSE](https://github.com/nickejanssen/WOM/blob/master/LICENSE) for more info.
