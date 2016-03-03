@@ -28,6 +28,6 @@ module WOM
     #:access_key_id     => 'AKIAJM3LCWBTLVAXYQYQ',
     #:secret_access_key => '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'
     #)
-
+    config.assets.paths << "#{Rails.root}/public/videos"
   end
 end
