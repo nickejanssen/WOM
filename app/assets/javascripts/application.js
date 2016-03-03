@@ -11,12 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
-//= require_tree .
-//= require jquery_ujs
+//= require plate
 //= require bootstrap
 //= require bindWithDelay
 //= require jquery.datetimepicker
+//= require turbolinks
 //= require_tree .
 
 $(document).ready(function(){
@@ -27,5 +28,13 @@ $(document).ready(function(){
     timepicker:false,
     format:'Y/m/d',
     maxDate:'0'
+  });
+});
+
+$(function(){
+  $('.demoPlate').plate({
+    playlist: [
+      {"file":"files/morgantj_-_caf_connection_1.mp3"}
+    ]
   });
 });
