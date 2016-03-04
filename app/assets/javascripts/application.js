@@ -13,11 +13,10 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
-//= require plate
+//= require plate.js
 //= require bootstrap
 //= require bindWithDelay
 //= require jquery.datetimepicker
-//= require turbolinks
 //= require_tree .
 
 $(document).ready(function(){
