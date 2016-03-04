@@ -29,12 +29,12 @@ class User < ActiveRecord::Base
 
 
   def self.from_omniauth(auth)
-      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-        user.provider = auth.provider
-        user.uid = auth.uid
-        user.email = auth.info.email
+        user = find_or_create_by(provider: auth.provider, uid: auth.uid)
+        binding.pry
+        user.email = auth.info.nickname
         user.location = auth.info.location
         user.password = Devise.friendly_token[0,20]
-      end
+        user.confirmed_at = Time.now
+        user
   end
 end

@@ -278,6 +278,7 @@ DEPENDENCIES
   owlcarousel-rails
   pg
   populator
+  pry
   public_activity
   rails (= 4.1.6)
   rails_12factor
