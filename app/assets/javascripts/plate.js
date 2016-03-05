@@ -4,7 +4,7 @@ jQuery.fn.plate = function(options){
 		autoplay: false,
 		speed: 1.0,
 		playlist: false,
-		defCover: 'img/no_cover.png',
+		defCover: 'no_cover.png',
 		volume: 50,
 		random: false,
 		width: 320,

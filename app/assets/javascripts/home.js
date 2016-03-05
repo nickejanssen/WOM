@@ -11,6 +11,7 @@ var readURL = function(input, preview) {
   }
 };
 
+/*
 $(document).ready(function() {
 
   var preview = "#img-preview > img";
@@ -39,3 +40,4 @@ $(document).ready(function() {
 
   });
 });
+*/
