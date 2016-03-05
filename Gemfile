@@ -25,6 +25,7 @@ gem "binding_of_caller"
 gem "geocoder"
 gem 'aws-sdk-rails'
 gem 'aws-sdk-core'
+gem 'dotenv-rails'
 
 group :development do
   gem 'spring'
@@ -37,6 +38,7 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+
 end
 
 group :production do
@@ -44,6 +46,7 @@ group :production do
   gem 'puma'
   gem 'cloudinary'
   gem 'rails_12factor'
+
 end
 
 gem 'devise'
