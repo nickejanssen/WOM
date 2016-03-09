@@ -1,17 +1,11 @@
 Rails.application.routes.draw do
 
   get 'terms/show'
-
   get 'privacy/show'
-
   get 'music/index'
-
   get 'music/download'
-
   get 'music/mpage'
-
   get 'music/upload'
-
   get 'music/delete'
 
   resources :uploads
