@@ -18,6 +18,7 @@
 //= require bootstrap
 //= require bindWithDelay
 //= require jquery.datetimepicker
+//= require mapbox.js
 //= require_tree .
 
 $(document).ready(function(){

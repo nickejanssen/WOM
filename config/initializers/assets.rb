@@ -8,6 +8,10 @@ Rails.application.config.assets.precompile += %w( jquery-ui.js )
 Rails.application.config.assets.precompile += %w( jquery.js )
 Rails.application.config.assets.precompile += %w( plate.js )
 Rails.application.config.assets.precompile += %w( playlist.js )
+Rails.application.config.assets.precompile += %w( icons-000000.png )
+Rails.application.config.assets.precompile += %w( icons-ffffff.png )
+Rails.application.config.assets.precompile += %w( icons-000000@2x.png )
+Rails.application.config.assets.precompile += %w( icons-ffffff@2x.png )
 
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path

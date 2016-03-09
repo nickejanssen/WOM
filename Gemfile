@@ -27,6 +27,9 @@ gem 'aws-sdk-rails'
 gem 'aws-sdk-core'
 gem 'dotenv-rails'
 
+# Mapbox-rails integrates the Chosen with the Rails asset pipeline. https://github.com/aai/mapbox-rails
+gem 'mapbox-rails'
+
 group :development do
   gem 'spring'
   gem 'better_errors'

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :uploads
 
+  get 'map/index', as: 'map'
 
   resources :posts
   resources :comments, only: [:create, :destroy]
