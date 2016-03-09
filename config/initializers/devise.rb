@@ -14,6 +14,8 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'admin@WOMapp.herokuapp.com'
   config.omniauth :twitter, ENV["TWITTER_KEY"], ENV["TWITTER_SECRET"]
+  config.omniauth :facebook, ENV["FACEBOOK_APP_ID"], ENV["FACEBOOK_APP_SECRET"], provider_ignores_state: true
+
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'

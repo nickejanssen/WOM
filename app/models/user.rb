@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
     :recoverable, :rememberable, :trackable, :validatable,
-     :omniauthable, :omniauth_providers => [:twitter]
+   :omniauthable, :omniauth_providers => [:twitter, :facebook]
   acts_as_voter
   acts_as_follower
   acts_as_followable
@@ -30,11 +30,12 @@ class User < ActiveRecord::Base
 
   def self.from_omniauth(auth)
         user = find_or_create_by(provider: auth.provider, uid: auth.uid)
-        binding.pry
-        user.email = auth.info.nickname
-        user.location = auth.info.location
+        user.email = auth.info.email
+        #user.location = auth.info.location
         user.password = Devise.friendly_token[0,20]
         user.confirmed_at = Time.now
+        user.avatar = auth.info.image
         user
+        #binding.pry
   end
 end
