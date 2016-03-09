@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'terms/show'
+
+  get 'privacy/show'
+
   get 'music/index'
 
   get 'music/download'
