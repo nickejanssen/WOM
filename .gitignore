@@ -45,3 +45,6 @@ public/videos/womAnimation.mp4
 public/womAnimation.mov
 public/womAnimation.mp4
 config/environment_variables.yml
+
+# Ignore application configuration
+/config/application.yml

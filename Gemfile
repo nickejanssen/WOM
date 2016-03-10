@@ -26,7 +26,7 @@ gem "geocoder"
 gem 'aws-sdk-rails'
 gem 'aws-sdk-core'
 gem 'dotenv-rails'
-gem 'figaro'
+gem "figaro", "~> 0.7.0"
 
 # Mapbox-rails integrates the Chosen with the Rails asset pipeline. https://github.com/aai/mapbox-rails
 gem 'mapbox-rails'
