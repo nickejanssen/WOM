@@ -44,9 +44,10 @@ Rails.application.configure do
 
   # AWS Configuration as per the docu.
   # http://docs.aws.amazon.com/sdk-for-ruby/latest/DeveloperGuide/aws-ruby-sdk-getting-started.html#aws-ruby-sdk-credentials-client
+  #s3 = Aws::S3::Resource.new(region: 'us-east-1')
   #s3 = Aws::S3::Client.new(
   #  access_key_id: ENV["ACCESS_KEY_ID"],
   #  secret_access_key: ENV["SECRET_ACCESS_KEY"]
   #)
-  #s3 = Aws::S3::Resource.new(region: ENV["AWS_REGION"])
+
 end
