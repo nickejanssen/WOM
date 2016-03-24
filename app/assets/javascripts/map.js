@@ -1,4 +1,3 @@
-
 $(document).on("ready", function() {
 	L.mapbox.accessToken = ENV['MAP_BOX_TOKEN'];
 	var map = L.mapbox.map('map', 'Your map layer', { zoomControl: false })

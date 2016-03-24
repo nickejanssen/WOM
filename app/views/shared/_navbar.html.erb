@@ -12,15 +12,19 @@
     <div class="collapse navbar-collapse" id="navbar-top">
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
+          <li><%= link_to 'Get The Album', music_path %></li>
+          <li><%= link_to 'Get The App', app_path %></li>
           <li><%= link_to 'About WOM', about_path %></li>
-          <li><%= link_to 'The Music', music_path %></li>
           <li><%= link_to 'Map', map_path %></li>
+          <li><%= link_to 'Press', press_path %></li>
           <li><%= link_to(current_user.name, user_path(current_user)) %></li>
           <li><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></li>
         <% else %>
+          <li><%= link_to 'Get The Album', music_path %></li>
+          <li><%= link_to 'Get The App', app_path %></li>
           <li><%= link_to 'About WOM', about_path %></li>
-          <li><%= link_to 'The Music', music_path %></li>
           <li><%= link_to 'Map', map_path %></li>
+          <li><%= link_to 'Press', press_path %></li>
           <li><%= link_to 'Sign up', new_user_registration_path %></li>
           <li><%= link_to 'Sign in', user_session_path %></li>
         <% end %>

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'press/show'
+
+  get 'app/show'
+
   get 'terms/show'
   get 'privacy/show'
   get 'music/index'
@@ -38,6 +42,8 @@ Rails.application.routes.draw do
   match :find_friends, to: 'home#find_friends', as: :find_friends, via: :get
   match :about, to: 'home#about', as: :about, via: :get
   match :music, to: 'music#index', as: :music, via: :get
+  match :app, to: 'app#show', as: :app, via: :get
+  match :press, to: 'press#show', as: :press, via: :get
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
