@@ -7,6 +7,23 @@ class EventsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_event, only: [:show, :destroy]
 
+  def index
+    @events = Event.all
+    @geojson = Array.new
+    build_geojson(event, @geojson)
+  end
+
+  respond_to do |format|
+    format.html
+    format.json { render json: @geojson }
+  end
+
+  def build_geojson(events, geojson)
+    events.each do |event|
+      geojson << GeojsonBuilder.build_event(event)
+    end
+  end
+
   def new
     @event = Event.new
   end
