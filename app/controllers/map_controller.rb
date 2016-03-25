@@ -1,23 +1,32 @@
 class MapController < ApplicationController
 	def index
     @users = User.all
-    @geojson = Array.new
+    # @geojson = Array.new
+    # user = User.last
+    @geojson = { type: 'FeatureCollection',
+    features: []}
 
     @users.each do |user|
-      @geojson << {
+      @geojson[:features] << {
         type: 'Feature',
         geometry: {
           type: 'Point',
           coordinates: [user.longitude, user.latitude]
         },
         properties: {
-          name: user.name,
-          address: user.street,
-          :'marker-color' => '#00607d',
-          :'marker-symbol' => 'circle',
-          :'marker-size' => 'medium'
+          title: user.name,
+          description: user.location,
+          :"marker-color" => "#00607d",
+          :"marker-symbol" => "circle",
+          :"marker-size" => "medium"
         }
       }
     end
-end
+    
+    respond_to do |format|
+      format.html
+      format.json { render json: @geojson }  # respond with the created JSON object
+    end
+
+  end
 end
