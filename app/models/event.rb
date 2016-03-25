@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: events
+#
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  when            :datetime
+#  user_id         :integer
+#  created_at      :datetime
+#  updated_at      :datetime
+#  cached_votes_up :integer          default(0)
+#  comments_count  :integer          default(0)
+#
+
 # Copyright (c) 2015, @nickejanssen(Nicolas Janssen)
 # WOM is an Open source Social network written in Ruby on Rails This file is licensed
 # under GNU GPL v2 or later. See the LICENSE.

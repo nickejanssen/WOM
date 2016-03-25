@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id              :integer          not null, primary key
+#  content         :text             not null
+#  user_id         :integer
+#  attachment      :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  cached_votes_up :integer          default(0)
+#  comments_count  :integer          default(0)
+#  content_html    :text
+#
+
 # Copyright (c) 2015, @nickejanssen(Nicolas Janssen)
 # WOM is an Open source Social network written in Ruby on Rails This file is licensed
 # under GNU GPL v2 or later. See the LICENSE.
