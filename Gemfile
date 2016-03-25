@@ -29,7 +29,8 @@ gem 'dotenv-rails'
 gem "figaro", "~> 0.7.0"
 
 # Mapbox-rails integrates the Chosen with the Rails asset pipeline. https://github.com/aai/mapbox-rails
-gem 'mapbox-rails'
+# gem 'mapbox-rails'
+gem 'mapbox-rails', :git => 'https://github.com/aai/mapbox-rails.git'
 
 group :development do
   gem 'spring'
@@ -68,6 +69,7 @@ gem 'counter_culture', '~> 0.1.33'
 gem 'faker'
 gem 'populator'
 gem 'auto_html'
+gem 'annotate'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
