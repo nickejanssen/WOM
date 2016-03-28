@@ -7,20 +7,22 @@ class MapController < ApplicationController
     features: []}
 
     @users.each do |user|
-      @geojson[:features] << {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [user.longitude, user.latitude]
-        },
-        properties: {
-          title: user.name,
-          description: user.location,
-          :"marker-color" => "#00607d",
-          :"marker-symbol" => "circle",
-          :"marker-size" => "medium"
+      if user.longitude
+        @geojson[:features] << {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [user.longitude, user.latitude]
+          },
+          properties: {
+            title: user.name,
+            description: user.location,
+            :"marker-color" => "#00607d",
+            :"marker-symbol" => "circle",
+            :"marker-size" => "medium"
+          }
         }
-      }
+      end
     end
     
     respond_to do |format|
