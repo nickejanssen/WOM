@@ -3,6 +3,8 @@ namespace :fill do
   task data: :environment do
     require 'faker'
     require 'populator'
+    Faker::Config.locale = 'en'
+
     puts 'Erasing existing data'
     puts '====================='
 
@@ -25,6 +27,7 @@ namespace :fill do
       user.confirmed_at = DateTime.now
       user.sign_in_count = 0
       user.posts_count = 0
+      user.location = Faker::Address.default_city + " " + Faker::Address.default_country
       puts "created user #{user.name}"
     end
 

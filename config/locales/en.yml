@@ -21,3 +21,7 @@
 
 en:
   hello: "Hello world"
+
+  faker:
+    address:
+      default_city: [New York, Los Angeles, Chicago, Houston, Philadelphia, Phoenix, San Antonio, San Diego, Dallas, San Jose, Austin, Jacksonville, San Francisco, Indianapolis, Columbus, Fort Worth, Charlotte, Detroit, El Paso, Seattle, Denver, Washington, Memphis, Boston, Nashville, Baltimore, Oklahoma City, Portland, Las Vegas, Louisville, Milwaukee, Albuquerque, Tucson, Fresno, Sacramento, Long Beach, Kansas City, Mesa, Atlanta, Virginia Beach, Omaha, Colorado Springs, Raleigh, Miami, Oakland, Minneapolis, Tulsa, Cleveland, Wichita, New Orleans, Arlington, Bakersfield, Tampa, Aurora, Honolulu, Anaheim, Santa Ana, Corpus Christi, Riverside, St. Louis, Lexington, Pittsburgh, Stockton, Anchorage, Cincinnati, Saint Paul, Greensboro, Toledo, Newark, Plano, Henderson, Lincoln, Orlando, Jersey City, Chula Vista, Buffalo, Fort Wayne, Chandler, St. Petersburg, Laredo, Durham, Irvine, Madison, Norfolk, Lubbock, Gilbert, Winston–Salem, Glendale, Reno, Hialeah, Garland, Chesapeake, Irving, North Las Vegas, Scottsdale, Baton Rouge, Fremont, Richmond, Boise, San Bernardino]
