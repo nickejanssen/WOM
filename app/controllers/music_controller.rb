@@ -13,7 +13,7 @@ class MusicController < ApplicationController
 
   def download2
   	s3 = Aws::S3::Resource.new(region: ENV['AWS_MUSIC_REGION'])
-  	url = s3.bucket(ENV['BUCKET_MUSIC']).object('03_Re-Engage.mp3').presigned_url(:get, expires_in: 1*20.minutes, response_content_disposition: 'attachment; filename=03_Re-Engage.mp3')
+  	url = s3.bucket(ENV['BUCKET_MUSIC']).object('WOM_STEMS.zip').presigned_url(:get, expires_in: 1*20.minutes, response_content_disposition: 'attachment; filename=WOM_STEMS.zip')
   	redirect_to url
   end
 
