@@ -55,11 +55,25 @@ class User < ActiveRecord::Base
   validates_presence_of :name
 
   geocoded_by :location
-  after_validation :geocode
+  after_validation :geocode, if: ->(obj){ obj.location.present? and obj.location_changed? }
+  after_validation :lat_changed?
 
 
   self.per_page = 10
 
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]
+
+  private
+
+  def lat_changed?
+    if (self.location_changed?)
+        if !(self.latitude_changed?)
+            self.errors.add(:location, 'Location is not valid')
+            return false
+        end
+    end
+    return true
+  end
+
 end

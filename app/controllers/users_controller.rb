@@ -51,8 +51,16 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
+      flash[:notice] = "Profile successfully updated"
       redirect_to user_path(@user)
     else
+      if @user.errors.messages.keys != []
+        err = []
+        @user.errors.messages.each_value do |val|
+          err << val[0]
+        end
+        flash[:alert] = err.join("<br/>").html_safe
+      end
       render :edit
     end
   end
