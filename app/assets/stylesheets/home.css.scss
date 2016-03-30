@@ -22,15 +22,15 @@
     line-height: 3rem;
   }
 }
-
-#hero-image {
+/*
+#hero-images {
   position: fixed;
   top: 0%;
   left: 0%;
   width: 100%;
   height: auto;
 }
-#hero-image img {
+#hero-images img {
   position: absolute;
   top: 0;
   left: 0;
@@ -49,7 +49,7 @@
   overflow:hidden;
 }
 
-.hero-img {
+.hero-imgs {
   background: url("hero.jpg") no-repeat center center;
   background-size: cover;
   width: 100%;
@@ -59,7 +59,7 @@
   top: 180px;
 }
 
-.hero-img img {
+.hero-imgs img {
   max-width: 100%;
   position: absolute;
   top: 0;
@@ -69,23 +69,4 @@
   margin: auto;
   min-width: 50%;
 }
-
-#owl-demo .item{
-  margin: 0px;
-}
-
-#owl-demo .item img{
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-#img-preview {
-  padding: 5px;
-  display: inline-block;
-  border: 1px solid $border-color;
-  img {
-    width: 35px;
-    height: 35px;
-  }
-}
+*/

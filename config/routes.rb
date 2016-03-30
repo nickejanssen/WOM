@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'rec_holder/index'
+
   get 'press/show'
 
   get 'app/show'

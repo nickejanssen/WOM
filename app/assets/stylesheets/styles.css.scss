@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 body {
-  padding-top: 100px;
+  padding-top: 50px;
   background: $bg-color;
   font-family: 'Noto Sans', sans-serif;
 }
@@ -28,11 +28,21 @@ h1, h2, h3, h4, h5, h6 {
   };
 }
 
-#hero-image {
+/*#hero-image {
 	height: 540px;
   margin: 0 auto;
 	padding: 0 10px;
 	width: 75%;
+}
+*/
+
+.bgimage {
+  background:url('hero.jpg') no-repeat;
+  background-size:100%;
+}
+
+.bgimage-inside {
+padding-top: 30%;
 }
 
 .avatar {
