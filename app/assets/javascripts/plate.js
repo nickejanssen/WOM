@@ -151,13 +151,12 @@ jQuery.fn.plate = function(options){
 		var pl_tracks = '';
 		opt.playlist.forEach(function(track, i){
 			if(!track.title || !track.artist){//доповнюємо інфу метаданими з файлу
-				console.log(track.title + "++++++" + track.artist);
-				console.log(track.file);
 				ID3v2.parseURL(track.file, function(tags){//підгрузка метаданих з файлу
 					if(!track.title){track.title = tags.Title ? tags.Title : '&nbsp;';}//назва
 					if(!track.artist){track.artist = tags.Artist? tags.Artist : '&nbsp;';}//виконавець
 				});
 				if (track.artist == undefined){track.artist = '';}
+				if (track.title == undefined){track.title = '';}
 				pl_tracks += '<div class="track" rel="'+i+'">'+track.title+' - '+track.artist+'</div>';
 			}else{
 				pl_tracks += '<div class="track" rel="'+i+'">'+track.title+' - '+track.artist+'</div>';
