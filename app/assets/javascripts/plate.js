@@ -325,7 +325,7 @@ jQuery.fn.plate = function(options){
 			if($random.hasClass('active')){
 				while(num == $audio.currentTrack){num = Math.floor(Math.random() * (opt.playlist.length));}
 			}else{
-				num = $audio.currentTrack + 1;
+				num = +$audio.currentTrack + 1;
 			}
 
 			$audio.loadTrack(num);
