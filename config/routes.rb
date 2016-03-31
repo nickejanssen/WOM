@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   resources :posts
   resources :comments, only: [:create, :destroy]
-  devise_for :users
+  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
   resources :users do
     member do
       get :friends
@@ -47,6 +47,7 @@ Rails.application.routes.draw do
   match :music, to: 'music#index', as: :music, via: :get
   match :app, to: 'app#show', as: :app, via: :get
   match :press, to: 'press#show', as: :press, via: :get
+  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
