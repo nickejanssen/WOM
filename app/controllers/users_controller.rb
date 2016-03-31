@@ -51,6 +51,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
+      sign_in(@user == current_user ? @user : current_user, :bypass => true)
       flash[:notice] = "Profile successfully updated"
       redirect_to user_path(@user)
     else
@@ -62,6 +63,20 @@ class UsersController < ApplicationController
         flash[:alert] = err.join("<br/>").html_safe
       end
       render :edit
+    end
+  end
+
+  def finish_signup
+    # authorize! :update, @user 
+    @dd = session[:auth]
+    if request.patch? && params[:user] #&& params[:user][:email]
+      if @user.update(user_params)
+        @user.skip_reconfirmation!
+        sign_in(@user, :bypass => true)
+        redirect_to @user, notice: 'Your profile was successfully updated.'
+      else
+        @show_errors = true
+      end
     end
   end
 
