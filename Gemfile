@@ -29,7 +29,6 @@ gem 'dotenv-rails'
 gem "figaro", "~> 0.7.0"
 
 # Mapbox-rails integrates the Chosen with the Rails asset pipeline. https://github.com/aai/mapbox-rails
-# gem 'mapbox-rails'
 gem 'mapbox-rails', :git => 'https://github.com/aai/mapbox-rails.git'
 
 group :development do
@@ -55,6 +54,11 @@ group :production do
 end
 
 gem 'devise'
+gem 'omniauth'
+# gem 'omniauth-google'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+
 gem 'carrierwave'
 gem 'friendly_id', '~> 5.0.0'
 
