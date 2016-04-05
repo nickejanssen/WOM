@@ -28,17 +28,20 @@ h1, h2, h3, h4, h5, h6 {
   };
 }
 
-/*#hero-image {
-	height: 540px;
+.co-description {
+  text-align: center;
   margin: 0 auto;
-	padding: 0 10px;
-	width: 75%;
+  padding: 8px;
+  max-width: 100%;
+  font-size: 10px; font-size: 1em;
+  background-color: #fff;
+  font-family: 'Montserrat';
 }
-*/
 
 .bgimage {
   background:url('hero.jpg') no-repeat;
   background-size:100%;
+  background-color: #fff;
 }
 
 .bgimage-inside {
