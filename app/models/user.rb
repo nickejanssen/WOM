@@ -79,6 +79,20 @@ class User < ActiveRecord::Base
     # can be cleaned up at a later date.
     user = signed_in_resource ? signed_in_resource : identity.user
 
+    if auth.provider.downcase.match("google")
+      token = auth["credentials"]["token"]
+      client = Google::APIClient.new(:application_name => "MyApplication",:application_version => "0.1")
+      client.authorization.access_token = token
+      plus = client.discovered_api('plus', 'v1')
+      data = client.execute( :api_method => plus.people.get, :parameters => {'collection' => 'public', 'userId' => 'me'}).data
+      places = data.placesLived ? data.placesLived : nil
+      if places != nil
+        places.each do |place| 
+          @location = place['value'] if place.to_hash.has_key?('primary') 
+        end
+      end
+    end
+
     # Create the user if needed
     if user.nil?
 
@@ -91,13 +105,15 @@ class User < ActiveRecord::Base
 
       # Create the user if it's a new registration
       if user.nil?
+        # client = OAuth2::Client.new(ENV['G_CLIENT_ID'], ENV['G_CLIENT_SECRET'])
+        # auth.access_token
         user = User.new(
           name: auth.extra.raw_info.name,
           #username: auth.info.nickname || auth.uid,
           email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
           password: Devise.friendly_token[0,20],
           #set location here         
-          location: auth.info.location
+          location: @location ? @location : auth.info.location
         )
         user.skip_confirmation!
         user.save!
@@ -123,6 +139,20 @@ class User < ActiveRecord::Base
     # can be cleaned up at a later date.
     user = signed_in_resource ? signed_in_resource : identity.user
 
+    if auth.provider.match("google")
+      token = auth["credentials"]["token"]
+      client = Google::APIClient.new(:application_name => "MyApplication",:application_version => "0.1")
+      client.authorization.access_token = token
+      plus = client.discovered_api('plus', 'v1')
+      data = client.execute( :api_method => plus.people.get, :parameters => {'collection' => 'public', 'userId' => 'me'}).data
+      places = data.placesLived ? data.placesLived : nil
+      if places != nil
+        places.each do |place| 
+          @location = place['value'] if place.to_hash.has_key?('primary') 
+        end
+      end
+    end
+    
     # Create the user if needed
     if user.nil?
 
@@ -141,7 +171,7 @@ class User < ActiveRecord::Base
           email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
           password: Devise.friendly_token[0,20],
           #set location here         
-          location: auth.info.location
+          location: @location ? @location : auth.info.location
         )
         user.skip_confirmation!
         user.save!
@@ -154,7 +184,7 @@ class User < ActiveRecord::Base
       identity.save!
     end
     # user
-    auth
+    @location
   end
 
 
