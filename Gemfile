@@ -53,13 +53,13 @@ group :production do
 
 end
 
+gem 'pry' #rails cool console
+
 gem 'devise'
 gem 'omniauth'
-# gem 'omniauth-google'
+gem 'google-api-client', '<0.9', require: 'google/api_client'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-oauth2', '~>1.3.1' 
-gem 'omniauth-gplus'
-gem 'omniauth-googleplus'
 gem 'omniauth-facebook'
 
 gem 'carrierwave'
