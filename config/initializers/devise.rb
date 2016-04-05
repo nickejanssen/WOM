@@ -240,9 +240,9 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :facebook, ENV['FB_APP_ID'], ENV['FB_APP_SECRET'], {:info_fields => 'name, location'}
-  config.omniauth :google_oauth2, ENV['G_CLIENT_ID'], ENV['G_CLIENT_SECRET'], {:skip_jwt => true, :scope => "email, plus.login, profile, plus.me", :info_fields => 'location'}
-  config.omniauth :gplus, ENV['G_CLIENT_ID'], ENV['G_CLIENT_SECRET'], {scope: 'userinfo.profile', :fields => 'placesLived'}
-  config.omniauth :googleplus, ENV['G_CLIENT_ID'], ENV['G_CLIENT_SECRET']
+  config.omniauth :google_oauth2, ENV['G_CLIENT_ID'], ENV['G_CLIENT_SECRET'], {:skip_jwt => true, :scope => "email, plus.login, profile, plus.me", :access_type => 'offline', :name => 'GooglePlus'}
+  
+  # config.omniauth :googleplus, ENV['G_CLIENT_ID'], ENV['G_CLIENT_SECRET']
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
