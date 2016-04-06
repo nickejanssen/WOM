@@ -85,7 +85,7 @@ class User < ActiveRecord::Base
       client.authorization.access_token = token
       plus = client.discovered_api('plus', 'v1')
       data = client.execute( :api_method => plus.people.get, :parameters => {'collection' => 'public', 'userId' => 'me'}).data
-      places = data.placesLived ? data.placesLived : nil
+      places = data["placesLived"].blank? ? nil : data.placesLived
       if places != nil
         places.each do |place| 
           @location = place['value'] if place.to_hash.has_key?('primary') 
@@ -139,13 +139,13 @@ class User < ActiveRecord::Base
     # can be cleaned up at a later date.
     user = signed_in_resource ? signed_in_resource : identity.user
 
-    if auth.provider.match("google")
+    if auth.provider.downcase.match("google")
       token = auth["credentials"]["token"]
       client = Google::APIClient.new(:application_name => "MyApplication",:application_version => "0.1")
       client.authorization.access_token = token
       plus = client.discovered_api('plus', 'v1')
       data = client.execute( :api_method => plus.people.get, :parameters => {'collection' => 'public', 'userId' => 'me'}).data
-      places = data.placesLived ? data.placesLived : nil
+      places = data["placesLived"].blank? ? nil : data.placesLived
       if places != nil
         places.each do |place| 
           @location = place['value'] if place.to_hash.has_key?('primary') 
@@ -184,7 +184,7 @@ class User < ActiveRecord::Base
       identity.save!
     end
     # user
-    @location
+    places
   end
 
 
