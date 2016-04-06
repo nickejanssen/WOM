@@ -24,7 +24,5 @@ production:
   adapter: postgresql
   host: localhost
   username: tggzdutsjgkroz
-  password: <%= ENV['DB_PASSWORD'] %>
-  url: <%= ENV['DATABASE_URL'] %>
   encoding: unicode
   database: d5mfsk1r0n6jg
