@@ -24,7 +24,7 @@
     <% end %>
     <div class="container">
       <%= yield %>
-      <%= render 'shared/footer' %>
+      <%= render 'shared/footer' unless current_page?(rec_holder_index_url) %>
     </div>
   </body>
 </html>
