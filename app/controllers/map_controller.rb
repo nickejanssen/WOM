@@ -9,8 +9,8 @@ class MapController < ApplicationController
       if user.longitude
         lon_r = Random.new
         lat_r = Random.new
-        longitude = user.longitude + lon_r.rand(0.0007)
-        latitude = user.latitude + lat_r.rand(0.0007)
+        longitude = user.longitude + lon_r.rand(-0.0007..0.0007)
+        latitude = user.latitude + lat_r.rand(-0.0007..0.0007)
         @geojson[:features] << {
           type: 'Feature',
           geometry: {
