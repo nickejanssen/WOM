@@ -86,22 +86,14 @@ Rails.application.configure do
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.perform_deliveries = true
 
-  #ActionMailer::Base.smtp_settings = {
-  #  :address              => 'smtp.sendgrid.net',
-  #  :port                 => '587',
-  #  :domain               => 'heroku.com',
-  #  :user_name            => ENV['USERNAME'],
-  #  :password             => ENV['PASSWORD'],
-  #  :authentication       => "plain",
-  #  :enable_starttls_auto => true
+  ActionMailer::Base.smtp_settings = {
+    :address              => 'smtp.sendgrid.net',
+    :port                 => '587',
+    :domain               => 'wordofmouthspeaks.com',
+    :user_name            => ENV['EMAIL_USER'],
+    :password             => ENV['EMAIL_PASS'],
+    :authentication       => "plain",
+    :enable_starttls_auto => true
 
-    ActionMailer::Base.smtp_settings = {
-      :address              => 'smtpout.secureserver.net',
-      :port                 => '465',
-      :domain               => 'heroku.com',
-      :user_name            => ENV['EMAIL_USER'],
-      :password             => ENV['EMAIL_PASS'],
-      :authentication       => "plain",
-      :enable_starttls_auto => true
   }
 end
