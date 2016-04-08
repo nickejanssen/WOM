@@ -5,14 +5,17 @@ class MapController < ApplicationController
     # user = User.last
     @geojson = { type: 'FeatureCollection',
     features: []}
-
     @users.each do |user|
       if user.longitude
+        lon_r = Random.new
+        lat_r = Random.new
+        longitude = user.longitude + lon_r.rand(0.0007)
+        latitude = user.latitude + lat_r.rand(0.0007)
         @geojson[:features] << {
           type: 'Feature',
           geometry: {
             type: 'Point',
-            coordinates: [user.longitude, user.latitude]
+            coordinates: [longitude, latitude]
           },
           properties: {
             title: user.name,
