@@ -50,5 +50,5 @@ Rails.application.configure do
   #  access_key_id: ENV["ACCESS_KEY_ID"],
   #  secret_access_key: ENV["SECRET_ACCESS_KEY"]
   #)
-  ENV['MAP_BOX_TOKEN'] = 'pk.eyJ1IjoibnVtYmVyaSIsImEiOiJjaW02M3g4YTcwMDNseG1rbWF0eHd4NXdtIn0.zTdtcjLAFiMP7jQjp7Wu-g'
+
 end
