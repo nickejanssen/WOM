@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  #get 'transactions/new'
+
   get 'rec_holder/index'
 
   get 'press/show'
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
   get 'music/delete'
 
   resources :uploads
+  resources :transactions, only: [:new, :create]
 
   get 'map/index', as: 'map'
 

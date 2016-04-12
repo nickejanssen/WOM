@@ -20,6 +20,9 @@
 
 
   <div class="btn-center">
+    <!--<%=link_to "Checkout", new_transaction_path, class: "button" %>-->
+    <p><%= h @notice %></p>
+    <%= button_to "Donate", new_donation_path, :method => :get %>
     </br>
   <a href="https://www.facebook.com/wordofmouthspeaks/?fref=ts" class="btn btn-facebook">
     <%= fa_icon 'thumbs-o-up' %> Like Us

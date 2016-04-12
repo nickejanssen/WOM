@@ -1,0 +1,10 @@
+<script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+
+<div class="form-container radius-box glassy-bg small-10 small-centered medium-8 large-6 columns">
+  <h2 class="mbs">New Donation</h2>
+  <%= form_tag transactions_path do%>
+  <p>Please enter your payment details:</p>
+  <div id="dropin"></div>
+  <%=submit_tag "Pay", class: "button mt1" %>
+  <%end%>
+</div>

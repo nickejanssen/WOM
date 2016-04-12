@@ -27,6 +27,9 @@ gem 'aws-sdk-rails'
 gem 'aws-sdk-core'
 gem 'dotenv-rails'
 gem "figaro", "~> 0.7.0"
+gem 'braintree', '~> 2.33.1'
+gem 'gon', '~> 5.1.2'
+gem 'slim', '~> 3.0', '>= 3.0.6'
 
 # Mapbox-rails integrates the Chosen with the Rails asset pipeline. https://github.com/aai/mapbox-rails
 gem 'mapbox-rails', :git => 'https://github.com/aai/mapbox-rails.git'
@@ -59,7 +62,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'google-api-client', '<0.9', require: 'google/api_client'
 gem 'omniauth-google-oauth2'
-gem 'omniauth-oauth2', '~>1.3.1' 
+gem 'omniauth-oauth2', '~>1.3.1'
 gem 'omniauth-facebook'
 
 gem 'carrierwave'
