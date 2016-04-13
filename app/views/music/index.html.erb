@@ -5,6 +5,8 @@
     <hr>
 
     <div class="btn-center">
+      <%=link_to "Donate", new_transaction_path, class: "btn btn-donate" %>
+      <p><%= h @notice %></p>
       <!-- <a href=<%= music_download_path %> class="btn btn-download"> -->
       <a href="https://www.dropbox.com/s/wb6zaxhiwu9evzl/WOM%20ALBUM.zip?dl=1" class="btn btn-download">
         <%= fa_icon 'cloud-download' %> Album
