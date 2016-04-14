@@ -9,23 +9,30 @@
     <%= favicon_link_tag 'womfav.ico' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
+
   <body class="<%= controller_name %> <%= action_name %>">
     <%= render 'shared/navbar' unless current_page?(rec_holder_index_url) %>
+
     <% unless notice.blank? %>
       <div class="alert alert-info alert-dismissable alert-fixed">
         <%= notice %>
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       </div>
     <% end %>
+
+
+
     <% unless alert.blank? %>
       <div class="alert alert-danger alert-dismissable alert-fixed">
         <%= alert %>
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       </div>
     <% end %>
+
     <div class="container">
       <%= yield %>
       <%= render 'shared/footer' unless current_page?(rec_holder_index_url) %>
     </div>
+
   </body>
 </html>

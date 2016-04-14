@@ -12,11 +12,13 @@ gem 'uglifier', '>= 1.3.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'coffee-rails', '~> 4.1.0'
 
 # Use twitter bootstrap sass
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
+gem 'bootstrap-modal-rails', '~> 2.2', '>= 2.2.5'
 
 #Additional Gems
 gem 'turbolinks', '~> 2.5', '>= 2.5.3'

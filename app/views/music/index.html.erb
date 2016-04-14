@@ -5,16 +5,32 @@
     <hr>
 
     <div class="btn-center">
+
+
+
       <%=link_to "Donate", new_transaction_path, class: "btn btn-donate" %>
       <p><%= h @notice %></p>
       <!-- <a href=<%= music_download_path %> class="btn btn-download"> -->
-      <a href="https://www.dropbox.com/s/wb6zaxhiwu9evzl/WOM%20ALBUM.zip?dl=1" class="btn btn-download">
-        <%= fa_icon 'cloud-download' %> Album
+      <a href="https://www.dropbox.com/s/wb6zaxhiwu9evzl/WOM%20ALBUM.zip?dl=1" class="">
+        <button type="button" class="btn btn-download" data-toggle="modal" data-target="#myModal">
+          <%= fa_icon 'cloud-download' %> Album
+        </button>
       </a>
       <!-- <a href=<%= music_download2_path %> class="btn btn-download"> -->
-      <a href="https://www.dropbox.com/s/wb6zaxhiwu9evzl/WOM%20ALBUM.zip?dl=1" class="btn btn-download">
-        <%= fa_icon 'cloud-download' %> Stems
+      <a href="https://www.dropbox.com/s/wb6zaxhiwu9evzl/WOM%20ALBUM.zip?dl=1" class="">
+        <button type="button" class="btn btn-download" data-toggle="modal" data-target="#myModal">
+          <%= fa_icon 'cloud-download' %> Stems
+        </button>
       </a>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+
+        <%= render partial: "modal" %>
+
+      </div>
     </div>
 
   </br>
@@ -30,3 +46,5 @@
 
   </div>
 </div>
+
+<div id="download-modal" class="modal fade"></div>

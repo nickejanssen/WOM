@@ -13,9 +13,6 @@ Rails.application.routes.draw do
   get 'music/index'
   get 'music/download'
   get 'music/download2'
-  get 'music/mpage'
-  get 'music/upload'
-  get 'music/delete'
 
   resources :uploads
   resources :transactions, only: [:new, :create]
