@@ -16,6 +16,7 @@
 //= require plate.js
 //= require playlist.js
 //= require bootstrap
+//= require bootstrap-modal
 //= require bindWithDelay
 //= require jquery.datetimepicker
 //= require mapbox.js

@@ -23,8 +23,8 @@ gem 'turbolinks', '~> 2.5', '>= 2.5.3'
 gem 'owlcarousel-rails'
 gem "binding_of_caller"
 gem "geocoder"
-gem 'aws-sdk-rails'
-gem 'aws-sdk-core'
+#gem 'aws-sdk-rails'
+#gem 'aws-sdk-core'
 gem 'dotenv-rails'
 gem "figaro", "~> 0.7.0"
 gem 'braintree', '~> 2.33.1'
