@@ -5,9 +5,12 @@
   <%= form_tag transactions_path do%>
   <p>Please enter your payment details:</p>
   <div id="dropin"></div>
-  <label>Donate What You Want:</label>
+  <% if !user_signed_in? %>
+  	<label>Your name: </label>
+  	<input class="donation" name="donate_name"></input>
+  <% end %>
+  <label>Donate What You Want: </label>
   <input class="donation" name="donate" value="10"></input>
   <%=submit_tag "Donate", class: "button mt1" %>
   <%end%>
-
 </div>
