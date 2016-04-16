@@ -9,11 +9,10 @@ class TransactionsController < ApplicationController
   def create
     payer
     donation = Transaction.new(amount: payer[:amount], name: payer[:name])
-    if donation.save 
+    if donation.save
       @result = Braintree::Transaction.sale(
         amount: payer[:amount],
         :customer => {:first_name => payer[:name]},
-        # current_user.cart_total_price,
         payment_method_nonce: params[:payment_method_nonce])
     end
     if @result && @result.success?
@@ -25,7 +24,7 @@ class TransactionsController < ApplicationController
       gon.client_token = generate_client_token
       render :new
     end
-        
+
   end
 
 

@@ -32,6 +32,7 @@ gem "figaro", "~> 0.7.0"
 gem 'braintree', '~> 2.33.1'
 gem 'gon', '~> 5.1.2'
 gem 'slim', '~> 3.0', '>= 3.0.6'
+gem 'newrelic_rpm', '~> 3.15', '>= 3.15.1.316'
 
 # Mapbox-rails integrates the Chosen with the Rails asset pipeline. https://github.com/aai/mapbox-rails
 gem 'mapbox-rails', :git => 'https://github.com/aai/mapbox-rails.git'

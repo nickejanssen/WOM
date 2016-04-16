@@ -192,6 +192,7 @@ GEM
     multipart-post (2.0.0)
     nenv (0.2.0)
     netrc (0.10.3)
+    newrelic_rpm (3.15.1.316)
     notiffany (0.0.6)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -359,6 +360,7 @@ DEPENDENCIES
   jquery-ui-rails
   letter_opener
   mapbox-rails!
+  newrelic_rpm (~> 3.15, >= 3.15.1.316)
   omniauth
   omniauth-facebook
   omniauth-google-oauth2
