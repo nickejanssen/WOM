@@ -57,8 +57,8 @@ class UsersController < ApplicationController
     else
       if @user.errors.messages.keys != []
         err = []
-        @user.errors.messages.each_value do |val|
-          err << val[0]
+        @user.errors.messages.each do |key, val|
+          err << key.to_s.capitalize + " " + val[0].to_s
         end
         flash[:alert] = err.join("<br/>").html_safe
       end

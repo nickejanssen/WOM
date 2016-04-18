@@ -17,10 +17,13 @@ class TransactionsController < ApplicationController
     end
     if @result && @result.success?
       donation.update(status: true)
-      #current_user.purchase_cart_movies!
       redirect_to root_url, notice: "Congraulations! Your transaction has been successfully Completed!"
     else
-      flash[:alert] = "Something went wrong while processing your transaction. Please try again!"
+      err = []
+      donation.errors.messages.each do |key,val|
+        err << key.to_s.capitalize + " " + val[0].to_s
+      end
+      flash[:alert] = err.join("<br/>").html_safe
       gon.client_token = generate_client_token
       render :new
     end
