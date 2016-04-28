@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415122027) do
+ActiveRecord::Schema.define(version: 20160428020228) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -159,6 +159,7 @@ ActiveRecord::Schema.define(version: 20160415122027) do
     t.string   "slug"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "card_id"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

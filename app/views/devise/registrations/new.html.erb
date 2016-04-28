@@ -18,6 +18,10 @@
         <%= f.email_field :email, class: 'form-control', placeholder: 'email@example.com' %>
       </div>
       <div class="form-group">
+        <%= f.label :card_id %> ID
+        <%= f.text_field :card_id, class: 'form-control', placeholder: 'ex: AWD4ES2T' %>
+      </div>
+      <div class="form-group">
         <%= f.label :password %>
         <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
