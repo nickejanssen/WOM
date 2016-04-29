@@ -10,12 +10,12 @@
 
       <%=link_to "Donate", new_transaction_path, class: "btn btn-donate" %>
       <p><%= h @notice %></p>
-      <!-- <a href=<%= music_download_path %> class="btn btn-download"> -->
-      <a href="https://www.dropbox.com/s/zoiin6kf29685fk/WOM_SPEAKS.zip?dl=1" class="">
+      <!-- <a href=<%= music_download_path %> class="btn btn-download"> https://www.dropbox.com/s/zoiin6kf29685fk/WOM_SPEAKS.zip?dl=1-->
+      <%= link_to music_download_path do %>
         <button type="button" class="btn btn-download" data-toggle="modal" data-target="#myModal">
           <%= fa_icon 'cloud-download' %> Album
         </button>
-      </a>
+      <% end %>
       <!-- <a href=<%= music_download2_path %> class="btn btn-download"> -->
       <a href="https://www.dropbox.com/s/fqn4zb965yz7p42/Stems.zip?dl=1" class="">
         <button type="button" class="btn btn-download" data-toggle="modal" data-target="#myModal">
